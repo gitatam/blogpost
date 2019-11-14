@@ -1,9 +1,16 @@
 {{#partial "content"}}
   <h1>Blogpost!</h1>
+
   <form action="/posts/success" method="post">
-    Post Title: <input type="text" placeholder="Enter post title" name="title" required><br><br>
-    <textarea name="content" id="post" cols="30" rows="10" placeholder="Post content goes here..." required></textarea><br>
-    <button>Add Post</button>
+    <div class="form-group">
+      <label for="title">Post Title:</label>
+      <input type="text" class="form-control" id="usr" name="title" placeholder="Enter post title">
+    </div>
+    <div class="form-group">
+      <label for="content">Post Content:</label>
+      <textarea name="content" class="form-control" rows="5" id="post" placeholder="Post content goes here..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Post</button>
   </form>
 {{/partial}}
 
