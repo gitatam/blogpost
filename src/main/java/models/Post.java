@@ -5,13 +5,12 @@ import com.sun.corba.se.impl.resolver.SplitLocalResolverImpl;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class Post {
+public class Post{
     private int id;
     private String title;
     private String content;
     private LocalDateTime createdAt;
     private static ArrayList<Post> instances = new ArrayList<>();
-
 
     public Post(int id, String title, String content) {
         this.id = id;
@@ -53,6 +52,12 @@ public class Post {
 
     public static ArrayList<Post> getAllPosts(){
         return instances;
+    }
+    public void deletePost(int id){
+        this.id =  id;
+    }
+    public void deleteAllPosts(String content){
+        this.content = content;
     }
 
 }
