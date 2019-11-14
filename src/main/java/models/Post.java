@@ -6,14 +6,13 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Post{
-    private int id;
+    //private int id;
     private String title;
     private String content;
     private LocalDateTime createdAt;
     private static ArrayList<Post> instances = new ArrayList<>();
 
-    public Post(int id, String title, String content) {
-        this.id = id;
+    public Post(String title, String content) {
         this.title = title;
         this.content = content;
         this.createdAt = LocalDateTime.now();
@@ -21,9 +20,9 @@ public class Post{
     }
 
     //getter functions
-    public int getId() {
-        return id;
-    }
+    //public int getId() {
+    //  return id;
+    //    }
 
     public String getTitle() {
         return title;
@@ -35,9 +34,9 @@ public class Post{
 
     //setter functions
 
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public void setId(int id) {
+//        this.id = id;
+//    }
     public void setTitle(String title) {
         this.title = title;
     }
@@ -53,10 +52,8 @@ public class Post{
     public static ArrayList<Post> getAllPosts(){
         return instances;
     }
-    public void deletePost(int id){
-        this.id =  id;
-    }
-    public void deleteAllPosts(String content){
+
+    public void deletePost(String content){
         this.content = content;
     }
 
