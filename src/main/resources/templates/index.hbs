@@ -1,5 +1,6 @@
 {{#partial "content"}}
   <h1> Welcome to Blogpost!</h1>
+
   <form action="/add-post" method="get">
     <button style="color:blue">Proceed to add a new post rather :)</button>
   </form>
@@ -7,7 +8,8 @@
   {{#if posts}}
 
   {{#each posts }}
-  <p>Current post:</p>
+    <br>
+  <p> {{ title }} </p>
   <p>{{ content }}</p>
   {{/each}}
 
