@@ -1,0 +1,10 @@
+{{#partial "content"}}
+  <h1>Blogpost!</h1>
+  <form action="/posts/success" method="post">
+    Post Title: <input type="text" placeholder="Enter post title" name="title" required><br><br>
+    <textarea name="content" id="post" cols="30" rows="10" placeholder="Post content goes here..." required></textarea><br>
+    <button>Add Post</button>
+  </form>
+{{/partial}}
+
+{{>base.hbs}}

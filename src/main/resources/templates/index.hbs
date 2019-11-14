@@ -1,0 +1,20 @@
+{{#partial "content"}}
+  <h1> Welcome to Blogpost!</h1>
+  <form action="/add-post" method="get">
+    <button style="color:blue">Proceed to add a new post rather :)</button>
+  </form>
+
+  {{#if posts}}
+
+  {{#each posts }}
+  <p>Current post:</p>
+  <p>{{ content }}</p>
+  {{/each}}
+
+  {{else}}
+  <p>No posts!</p>
+  {{/if}}
+
+{{/partial}}
+
+{{>base.hbs}}
