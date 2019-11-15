@@ -2,19 +2,18 @@
   <h1> Welcome to Blogpost!</h1>
 
   <form action="/add-post" method="get">
-    <button class="bg-warning float-right mb-3" >Proceed to add a new post rather :)</button>
+    <button class="bg-warning float-right mb-3" >Proceed to add a new post.</button>
   </form>
 
   {{#if posts}}
 
   {{#each posts }}
-    <br>
-  <p> {{ title }} </p>
-  <p>{{ content }}</p>
+  <p class = "mt-5"> {{ title }} </p>
+  <p>{{ content }} <a href="/posts/{{id}}">Read more...</a></p>
   {{/each}}
 
   {{else}}
-  <p>No posts!</p>
+  <p>No posts yet!</p>
   {{/if}}
 
 {{/partial}}

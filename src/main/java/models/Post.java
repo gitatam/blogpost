@@ -20,6 +20,10 @@ public class Post{
     }
 
     //getter functions
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
     public int getId() {
         return id;
     }

@@ -1,3 +1,4 @@
+import javafx.geometry.Pos;
 import models.Post;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -25,6 +26,14 @@ public class App {
             String content = req.queryParams("content");
             new Post(title, content);
             return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/posts/:id", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int postToFindId = Integer.parseInt(req.params(":id"));
+            Post foundPost = Post.findById(postToFindId);
+            model.put("post", foundPost);
+            return new ModelAndView(model, "post-detail.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }
