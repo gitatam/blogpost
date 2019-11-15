@@ -1,4 +1,3 @@
-import javafx.geometry.Pos;
 import models.Post;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -34,6 +33,14 @@ public class App {
             Post foundPost = Post.findById(postToFindId);
             model.put("post", foundPost);
             return new ModelAndView(model, "post-detail.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/posts/:id/update", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int postToUpdateId = Integer.parseInt(req.params("id"));
+            Post updatePost = Post.findById(postToUpdateId);
+            model.put("updatePost", updatePost);
+            return new ModelAndView(model, "post-form.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }
