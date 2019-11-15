@@ -54,6 +54,9 @@ public class Post{
     public static ArrayList<Post> getAllPosts(){
         return instances;
     }
+    public void updatePost(String content){
+        this.content = content;
+    }
 
     public void deletePost(String content){
         this.content = content;
@@ -61,5 +64,8 @@ public class Post{
     public static Post findById(int id){
         return instances.get(id-1);
 
+    }
+    public void deletePost(){
+        instances.remove(id-1);
     }
 }
