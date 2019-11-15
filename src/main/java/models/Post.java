@@ -6,23 +6,25 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Post{
-    //private int id;
+    private int id;
     private String title;
     private String content;
     private LocalDateTime createdAt;
     private static ArrayList<Post> instances = new ArrayList<>();
+    
 
     public Post(String title, String content) {
         this.title = title;
         this.content = content;
         this.createdAt = LocalDateTime.now();
         this.instances.add(this);
+        this.id = instances.size();
     }
 
     //getter functions
-    //public int getId() {
-    //  return id;
-    //    }
+    public int getId() {
+        return id;
+    }
 
     public String getTitle() {
         return title;
@@ -56,5 +58,8 @@ public class Post{
     public void deletePost(String content){
         this.content = content;
     }
+    public static Post findById(int id){
+        return instances.get(id-1);
 
+    }
 }
